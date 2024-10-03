@@ -31,5 +31,5 @@ Contributions are welcome! If you have suggestions or improvements, feel free to
 ## Contact Information
 
 JEEVA R P
-jeevaparamasivam005@gmail.com
+- Email : jeevaparamasivam005@gmail.com
 
