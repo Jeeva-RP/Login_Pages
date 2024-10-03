@@ -37,7 +37,6 @@
     <script>
         let currentOperation = '';
         let currentTyped = '';
-
         function appendNumber(number) {
             if (currentTyped === '0') {
                 currentTyped = number.toString();
@@ -46,14 +45,12 @@
             }
             updateDisplay();
         }
-
         function appendOperator(operator) {
             if (currentTyped === '') return;
             currentOperation += currentTyped + ' ' + operator + ' ';
             currentTyped = '';
             updateDisplay();
         }
-
         function calculateResult() {
             if (currentTyped === '') return;
             currentOperation += currentTyped;
@@ -66,13 +63,11 @@
             }
             updateDisplay();
         }
-
         function clearDisplay() {
             currentOperation = '';
             currentTyped = '0';
             updateDisplay();
         }
-
         function deleteLast() {
             if (currentTyped.length === 1) {
                 currentTyped = '0';
@@ -81,13 +76,11 @@
             }
             updateDisplay();
         }
-
         function appendDot() {
             if (currentTyped.includes('.')) return;
             currentTyped += '.';
             updateDisplay();
         }
-
         function updateDisplay() {
             document.getElementById('calc-operation').innerText = currentOperation || '0';
             document.getElementById('calc-typed').innerText = currentTyped;
