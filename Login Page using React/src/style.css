@@ -10,21 +10,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('ethan-hoover-eIVJAkj1uCs-unsplash.jpg'); /* Ensure this image is in your public directory */
+    background-image: url('ethan-hoover-eIVJAkj1uCs-unsplash.jpg');
     background-size: cover;
     backdrop-filter: blur(2px);
 }
 
 .glass-container {
     width: 350px;
-    height: 350px; /* Increased height */
+    height: 350px; 
     position: relative;
     z-index: 0;
     background: rgba(49, 49, 49, 0.171);
     box-shadow: 1px 1px 1px rgb(63, 62, 62);
     border-radius: 10px;
     border: 15px silver;
-    margin-top: 50px; /* Move it upward */
+    margin-top: 50px; 
 }
 
 
