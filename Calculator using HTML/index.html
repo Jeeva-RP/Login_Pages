@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc-body">
+        <div class="calc-screen">
+            <div id="calc-operation">0</div>
+            <div id="calc-typed">0</div>
+        </div>
+        <div class="calc-button-row">
+            <button class="ac" onclick="clearDisplay()">AC</button>
+            <button class="opt" onclick="appendOperator('/')">/</button>
+            <button class="opt" onclick="appendOperator('%')">%</button>
+            <button class="opt" onclick="appendOperator('*')">*</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button class="opt" onclick="appendOperator('-')">-</button>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button class="opt" onclick="appendOperator('+')">+</button>
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button class="opt" onclick="calculateResult()">=</button>
+            <button onclick="appendNumber(0)">0</button>
+            <button onclick="appendDot()">.</button>
+            <button onclick="deleteLast()">&#9003;</button>
+        </div>
+    </div>
+    <script>
+        let currentOperation = '';
+        let currentTyped = '';
+
+        function appendNumber(number) {
+            if (currentTyped === '0') {
+                currentTyped = number.toString();
+            } else {
+                currentTyped += number;
+            }
+            updateDisplay();
+        }
+
+        function appendOperator(operator) {
+            if (currentTyped === '') return;
+            currentOperation += currentTyped + ' ' + operator + ' ';
+            currentTyped = '';
+            updateDisplay();
+        }
+
+        function calculateResult() {
+            if (currentTyped === '') return;
+            currentOperation += currentTyped;
+            try {
+                const result = eval(currentOperation);
+                currentTyped = result.toString();
+                currentOperation = '';
+            } catch (e) {
+                currentTyped = 'Error';
+            }
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentOperation = '';
+            currentTyped = '0';
+            updateDisplay();
+        }
+
+        function deleteLast() {
+            if (currentTyped.length === 1) {
+                currentTyped = '0';
+            } else {
+                currentTyped = currentTyped.slice(0, -1);
+            }
+            updateDisplay();
+        }
+
+        function appendDot() {
+            if (currentTyped.includes('.')) return;
+            currentTyped += '.';
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById('calc-operation').innerText = currentOperation || '0';
+            document.getElementById('calc-typed').innerText = currentTyped;
+        }
+    </script>
+</body>
+</html>
