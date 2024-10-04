@@ -3,7 +3,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
   margin: 0;
   display: flex;
@@ -14,7 +13,6 @@ body {
   background-size: cover;
   backdrop-filter: blur(2px);
 }
-
 .glass-container {
   width: 350px;
   height: 350px;
@@ -25,7 +23,6 @@ body {
   border-radius: 10px;
   border: 15px silver;
 }
-
 .glass-container::before {
   content: '';
   position: absolute;
@@ -36,25 +33,21 @@ body {
   -webkit-backdrop-filter: blur(15px);
   z-index: -1;
 }
-
 .login-box {
   max-width: 250px;
   margin: 0 auto;
   text-align: center;
 }
-
 h2 {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: -20px;
 }
-
 form {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
-
 input {
   padding: 10px;
   margin-top: 25px;
@@ -65,15 +58,12 @@ input {
   color: #ffffff;
   font-size: 13px;
 }
-
 input::placeholder {
   color: #ffffffab;
 }
-
 input:focus {
   outline: none;
 }
-
 .options {
   display: flex;
   align-items: center;
@@ -81,18 +71,15 @@ input:focus {
   font-size: 12px;
   color: white;
 }
-
 .options input {
   margin-right: 5px;
   margin-top: 0px;
 }
-
 .options a {
   text-decoration: none;
   color: white;
   margin-left: auto;
 }
-
 button {
   background: #ffffff;
   color: black;
@@ -102,19 +89,16 @@ button {
   cursor: pointer;
   margin-top: 15px;
 }
-
 button:hover {
   background: transparent;
   color: white;
   outline: 1px solid #fff;
 }
-
 p {
   font-size: 13px;
   color: #ffffff;
   margin-top: 15px;
 }
-
 #register {
   text-decoration: none;
   color: #fff;

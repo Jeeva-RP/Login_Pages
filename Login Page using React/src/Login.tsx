@@ -5,12 +5,10 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false);
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log({ username, password, remember });
     };
-
     return (
         <div className="glass-container">
             <div className="login-box">
@@ -52,5 +50,4 @@ const Login: React.FC = () => {
         </div>
     );
 };
-
 export default Login;
